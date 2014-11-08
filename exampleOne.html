@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title> Virtual car pet </title>
+</head>
+	
+	<body onload="alert('Hello, I am your car pet.')">
+		<div style="margin-top:100px; text-align: center">
+			<img id="carImg" src="car.jpg" alt="iCar" style="cursor:pointer" onclick="touchCar()"/>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		function touchCar() {
+			var userName = prompt("What is your name?", "Enter your name here.");
+			if(userName) {
+				alert("Is it good to meet you, " + userName + ".");
+				document.getElementById("carImg").src = "car2.jpg";
+			}
+		}
+	</script>
+
+</html>
