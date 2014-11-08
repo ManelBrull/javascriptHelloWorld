@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title> Manel Brull just in time salads </title>
+		<script type="text/javascript">
+			function updateOrder(){
+				var numCaesar = 0;
+				var numCaprese = 0;
+				const PRICESALAD = 0.50;
+				const TAX = 0.21;
+				numCaesar = parseInt(document.getElementById("caesarNumber").value);
+				numCaprese = parseInt(document.getElementById("capreseNumber").value);
+				if(isNaN(numCaesar))
+					numCaesar = 0;
+				if(isNaN(numCaprese))
+					numCaprese = 0;
+				
+				var subTotal = (numCaesar + numCaprese) * PRICESALAD;
+				var taxVar = subTotal *  TAX;
+				var totalVar = subTotal + taxVar;
+				document.getElementById("subtotal").value = subTotal.toFixed(3);
+				document.getElementById("tax").value =  taxVar.toFixed(3);
+				document.getElementById("total").value = totalVar.toFixed(3);
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div style="margin-top:25px;">
+			<label>Name: </label>
+			<input type="text" id="nameOrder"/> </br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Number of Caesar salads: </label>
+			<input type="text" id="caesarNumber" onchange="updateOrder();"/></br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Number of Caprese salads: </label>
+			<input type="text" id="capreseNumber" onchange="updateOrder();"/></br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Number of minutes till picking: </label>
+			<input type="text" id="minutesTillPick"/></br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Subtotal: </label>
+			<input type="text" id="subtotal"/></br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Tax: </label>
+			<input type="text" id="tax"/></br>
+		</div>
+		
+		<div style="margin-top:25px;">
+			<label>Total: </label>
+			<input type="text" id="total"/></br>
+		</div>
+	
+	</body>
+	
+</html>
